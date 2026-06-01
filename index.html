@@ -1,0 +1,319 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tempo de resposta no WhatsApp e perda de lead | XMACNA</title>
+  <meta name="description" content="Metodologia e calculadora para medir tempo de resposta no WhatsApp, perda de lead, qualificacao e onde aplicar agente de IA para WhatsApp.">
+  <link rel="canonical" href="https://xmacna.github.io/tempo-resposta-whatsapp-leads/">
+  <meta property="og:title" content="Tempo de resposta no WhatsApp e perda de lead">
+  <meta property="og:description" content="Metodologia da XMACNA para medir atraso de resposta, qualificacao e oportunidade perdida no WhatsApp.">
+  <meta property="og:url" content="https://xmacna.github.io/tempo-resposta-whatsapp-leads/">
+  <meta property="og:type" content="article">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "Tempo de resposta no WhatsApp e perda de lead",
+    "description": "Metodologia para medir tempo de resposta no WhatsApp e priorizar automacao com IA.",
+    "datePublished": "2026-06-01",
+    "dateModified": "2026-06-01",
+    "author": {
+      "@type": "Organization",
+      "name": "XMACNA",
+      "url": "https://xmacna.ai"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "XMACNA",
+      "url": "https://xmacna.ai"
+    },
+    "mainEntityOfPage": "https://xmacna.github.io/tempo-resposta-whatsapp-leads/"
+  }
+  </script>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #141414;
+      --muted: #60666d;
+      --line: #d8dee5;
+      --soft: #f6f8fa;
+      --accent: #145cc7;
+      --accent-strong: #0d438f;
+      --risk: #9c4f00;
+      --ok: #0b7a4b;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--ink);
+      background: #fff;
+      line-height: 1.55;
+    }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { color: var(--accent-strong); text-decoration: underline; }
+    .wrap { width: min(1120px, calc(100% - 32px)); margin: 0 auto; }
+    header {
+      border-bottom: 1px solid var(--line);
+      background: #fff;
+      position: sticky;
+      top: 0;
+      z-index: 2;
+    }
+    nav {
+      min-height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    nav .links { display: flex; gap: 14px; flex-wrap: wrap; font-size: 14px; }
+    .hero {
+      padding: 62px 0 36px;
+      border-bottom: 1px solid var(--line);
+      background: linear-gradient(180deg, #f7faff 0%, #fff 82%);
+    }
+    .kicker {
+      margin: 0 0 10px;
+      text-transform: uppercase;
+      color: var(--accent-strong);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0;
+    }
+    h1 {
+      max-width: 920px;
+      margin: 0;
+      font-size: clamp(36px, 6vw, 66px);
+      line-height: 1.02;
+      letter-spacing: 0;
+    }
+    .lead {
+      max-width: 780px;
+      margin: 20px 0 0;
+      color: var(--muted);
+      font-size: 19px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 380px;
+      gap: 28px;
+      padding: 36px 0;
+      align-items: start;
+    }
+    section { padding: 24px 0; }
+    h2 { font-size: 28px; margin: 0 0 14px; letter-spacing: 0; }
+    h3 { font-size: 18px; margin: 0 0 8px; letter-spacing: 0; }
+    .cards { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+    .card {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 16px;
+      background: #fff;
+    }
+    .card p { margin: 6px 0 0; color: var(--muted); }
+    .panel {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--soft);
+      padding: 18px;
+      position: sticky;
+      top: 84px;
+    }
+    .inputs { display: grid; gap: 12px; }
+    label { font-size: 14px; font-weight: 700; display: grid; gap: 6px; }
+    input {
+      width: 100%;
+      min-height: 42px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 0 10px;
+      font: inherit;
+      background: #fff;
+    }
+    .result {
+      margin-top: 16px;
+      border-top: 1px solid var(--line);
+      padding-top: 16px;
+    }
+    .big {
+      display: block;
+      font-size: 42px;
+      line-height: 1;
+      font-weight: 800;
+      color: var(--risk);
+      margin: 6px 0;
+    }
+    .small { color: var(--muted); font-size: 14px; }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      overflow: hidden;
+      display: table;
+    }
+    th, td {
+      border-bottom: 1px solid var(--line);
+      padding: 12px;
+      text-align: left;
+      font-size: 14px;
+      vertical-align: top;
+    }
+    th { background: var(--soft); }
+    tr:last-child td { border-bottom: 0; }
+    .cta { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 18px; }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      border-radius: 8px;
+      padding: 0 16px;
+      background: var(--accent);
+      color: #fff;
+      font-weight: 800;
+    }
+    .btn:hover { color: #fff; background: var(--accent-strong); text-decoration: none; }
+    .btn.secondary {
+      background: #fff;
+      color: var(--accent-strong);
+      border: 1px solid var(--line);
+    }
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 22px 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+    @media (max-width: 880px) {
+      .grid, .cards { grid-template-columns: 1fr; }
+      .panel { position: static; }
+      table { display: block; overflow-x: auto; }
+      nav { align-items: flex-start; padding: 12px 0; }
+      .hero { padding-top: 42px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="wrap" aria-label="Navegacao principal">
+      <strong>XMACNA</strong>
+      <div class="links">
+        <a href="https://xmacna.ai">Site</a>
+        <a href="https://xmacna.ai/sdr-com-ia">Agente de IA para WhatsApp</a>
+        <a href="https://xmacna.ai/ia-para-vendas-b2b">IA para vendas B2B</a>
+        <a href="https://xmacna.ai/diagnostico">Diagnostico</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="wrap">
+        <p class="kicker">Tempo de resposta WhatsApp</p>
+        <h1>Lead que espera demais vira dado perdido no funil.</h1>
+        <p class="lead">Meça tempo de primeira resposta, qualificacao, agendamento e perda por faixa. Depois use agente de IA para WhatsApp onde o atraso realmente custa oportunidade.</p>
+      </div>
+    </section>
+
+    <div class="wrap grid">
+      <div>
+        <section>
+          <h2>Metodologia em 4 passos</h2>
+          <div class="cards">
+            <article class="card"><h3>1. Registrar eventos</h3><p>Guarde chegada do lead, primeira resposta, qualificacao, handoff, agendamento e status final.</p></article>
+            <article class="card"><h3>2. Agrupar faixas</h3><p>Compare ate 5 min, 5 a 15 min, 15 a 60 min, 1 a 4 h, 4 a 24 h e sem resposta.</p></article>
+            <article class="card"><h3>3. Medir conversao</h3><p>Calcule qualificacao, agendamento e perda por faixa, sempre com dados da propria operacao.</p></article>
+            <article class="card"><h3>4. Automatizar gargalos</h3><p>Use IA para responder, qualificar, registrar e encaminhar quando o atraso estiver evidente.</p></article>
+          </div>
+        </section>
+
+        <section>
+          <h2>Faixas de resposta</h2>
+          <table>
+            <thead>
+              <tr><th>Faixa</th><th>Uso</th><th>O que observar</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Ate 5 min</td><td>Referencia interna de resposta rapida.</td><td>Qualidade da conversa e campos completos.</td></tr>
+              <tr><td>5 a 15 min</td><td>Ainda proximo do interesse inicial.</td><td>Se o lead continua engajado.</td></tr>
+              <tr><td>15 a 60 min</td><td>Inicio de risco operacional.</td><td>Queda de retorno, follow-up e motivo de perda.</td></tr>
+              <tr><td>1 a 4 h</td><td>Atraso relevante para canais de intencao.</td><td>Volume fora de horario e capacidade do time.</td></tr>
+              <tr><td>4 a 24 h</td><td>Lead provavelmente esfriou.</td><td>Necessidade de automacao e priorizacao.</td></tr>
+              <tr><td>Sem resposta</td><td>Perda operacional direta.</td><td>Falha de processo, roteamento ou equipe.</td></tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section>
+          <h2>Quando acionar IA</h2>
+          <div class="cards">
+            <article class="card"><h3>Fora do horario</h3><p>Leads chegam quando a equipe humana nao esta disponivel.</p></article>
+            <article class="card"><h3>Triagem repetitiva</h3><p>O time gasta tempo separando curioso de lead qualificado.</p></article>
+            <article class="card"><h3>Dados incompletos</h3><p>Conversas acontecem, mas nao viram informacao no Painel Inteligente.</p></article>
+            <article class="card"><h3>Follow-up irregular</h3><p>A empresa esquece contexto, cadencia ou proximo passo.</p></article>
+          </div>
+        </section>
+      </div>
+
+      <aside class="panel">
+        <h2>Calculadora simples</h2>
+        <p class="small">Use seus proprios dados. O calculo estima oportunidade em risco, nao benchmark universal.</p>
+        <div class="inputs">
+          <label>Leads por mes
+            <input id="leads" type="number" min="0" value="300">
+          </label>
+          <label>% sem resposta rapida
+            <input id="late" type="number" min="0" max="100" value="40">
+          </label>
+          <label>% desses que poderiam ser recuperados
+            <input id="recover" type="number" min="0" max="100" value="25">
+          </label>
+        </div>
+        <div class="result" aria-live="polite">
+          <span class="small">Oportunidades mensais em risco</span>
+          <span class="big" id="risk">0</span>
+          <span class="small">Potencial recuperavel estimado</span>
+          <span class="big" id="recoverable">0</span>
+        </div>
+        <div class="cta">
+          <a class="btn" href="https://xmacna.ai/diagnostico">Fazer diagnostico</a>
+          <a class="btn secondary" href="https://xmacna.ai/sdr-com-ia">Ver agente de IA</a>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <footer>
+    <div class="wrap">XMACNA | Funcionarios Digitais com IA. Metodologia educativa baseada nos dados da propria operacao.</div>
+  </footer>
+
+  <script>
+    const leads = document.getElementById('leads');
+    const late = document.getElementById('late');
+    const recover = document.getElementById('recover');
+    const risk = document.getElementById('risk');
+    const recoverable = document.getElementById('recoverable');
+
+    function clamp(value, min, max) {
+      return Math.min(max, Math.max(min, Number.isFinite(value) ? value : 0));
+    }
+
+    function update() {
+      const total = clamp(Number(leads.value), 0, 1000000);
+      const lateRate = clamp(Number(late.value), 0, 100) / 100;
+      const recoverRate = clamp(Number(recover.value), 0, 100) / 100;
+      const atRisk = Math.round(total * lateRate);
+      const canRecover = Math.round(atRisk * recoverRate);
+      risk.textContent = atRisk.toLocaleString('pt-BR');
+      recoverable.textContent = canRecover.toLocaleString('pt-BR');
+    }
+
+    [leads, late, recover].forEach((input) => input.addEventListener('input', update));
+    update();
+  </script>
+</body>
+</html>
