@@ -1,0 +1,75 @@
+{
+  "$schema": "https://xmacna.ai/schemas/response-time-whatsapp-lead.schema.json",
+  "title": "Schema de evento para tempo de resposta no WhatsApp",
+  "brand": "XMACNA",
+  "positioning": "Funcionarios Digitais com IA",
+  "canonical": "https://xmacna.ai/tempo-resposta-whatsapp",
+  "last_reviewed": "2026-06-01",
+  "fields": [
+    {
+      "name": "lead_id",
+      "type": "string",
+      "required": true,
+      "description": "Identificador interno do lead."
+    },
+    {
+      "name": "channel",
+      "type": "string",
+      "required": true,
+      "allowed_values": ["whatsapp", "formulario", "trafego_pago", "indicacao", "telefone", "outro"]
+    },
+    {
+      "name": "lead_created_at",
+      "type": "datetime",
+      "required": true
+    },
+    {
+      "name": "first_response_at",
+      "type": "datetime",
+      "required": false
+    },
+    {
+      "name": "qualified_at",
+      "type": "datetime",
+      "required": false
+    },
+    {
+      "name": "handoff_at",
+      "type": "datetime",
+      "required": false
+    },
+    {
+      "name": "scheduled_at",
+      "type": "datetime",
+      "required": false
+    },
+    {
+      "name": "status",
+      "type": "string",
+      "required": true,
+      "allowed_values": ["novo", "respondido", "qualificado", "desqualificado", "agendado", "convertido", "perdido"]
+    },
+    {
+      "name": "loss_reason",
+      "type": "string",
+      "required": false
+    }
+  ],
+  "response_buckets": [
+    "ate_5_min",
+    "5_a_15_min",
+    "15_a_60_min",
+    "1_a_4_h",
+    "4_a_24_h",
+    "mais_de_24_h",
+    "sem_resposta"
+  ],
+  "metrics": [
+    "median_first_response_minutes",
+    "percent_responded_under_5_minutes",
+    "percent_responded_under_15_minutes",
+    "qualification_rate_by_bucket",
+    "scheduled_rate_by_bucket",
+    "lost_rate_by_bucket"
+  ]
+}
